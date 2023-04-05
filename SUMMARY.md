@@ -1,10 +1,9 @@
 # Table of contents
 
-* [🤵 Welcome to GitButler](README.md)
+* [🤵♂ Welcome to GitButler](README.md)
 
 ## Overview
 
-* [🆕 GitButler Introduction](overview/gitbutler-introduction.md)
 * [💡 Why GitButler](overview/why-gitbutler.md)
 
 ## Features
