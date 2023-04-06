@@ -10,4 +10,4 @@ The simplest way to get in touch with us is to email us at [hello@gitbutler.com]
 
 We are also available to chat on our Discord server:
 
-[https://discord.gg/wDKZCPEjXC](https://discord.gg/wDKZCPEjXC)
+[GitButler Discord](https://discord.gg/wDKZCPEjXC)
