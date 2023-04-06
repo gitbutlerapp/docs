@@ -4,7 +4,7 @@ description: Changelog for our GitButler client releases
 
 # 🐿 Releases
 
-## v0.1.0
+## v0.0.23
 
 #### Thu, April 6, 2023
 
