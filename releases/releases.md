@@ -4,6 +4,12 @@ description: Changelog for our GitButler client releases
 
 # 🐿 Releases
 
+## v0.0.24
+
+#### Tue, April 11, 2023
+
+Fixed the terminal :joy:&#x20;
+
 ## v0.0.23
 
 #### Thu, April 6, 2023
