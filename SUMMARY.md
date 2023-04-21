@@ -1,6 +1,6 @@
 # Table of contents
 
-* [🤵 Welcome to GitButler](README.md)
+* [🤵♂ Welcome to GitButler](README.md)
 
 ## Overview
 

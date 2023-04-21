@@ -4,6 +4,22 @@ description: Changelog for our GitButler client releases
 
 # 🐿 Releases
 
+## v0.2.0
+
+#### Friday, April 21, 2023
+
+New layout for the project page and redesign of the activity graphs in preparation for presenting more Git data in the sidebar. Also added some new styling to the commit page and have changed how we store our snapshot data so that it doesn't pollute the Git project space.
+
+![](<../.gitbook/assets/CleanShot 2023-04-21 at 09.31.00@2x.png>)![](<../.gitbook/assets/CleanShot 2023-04-21 at 09.33.06@2x.png>)
+
+## v0.1.0
+
+#### April 14, 2023
+
+Some bug fixes and improvements, but the big thing is our new shiny icon!
+
+![](../.gitbook/assets/icon.png)
+
 ## v0.0.24
 
 #### Tue, April 11, 2023
