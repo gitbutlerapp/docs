@@ -4,6 +4,12 @@ description: Changelog for our GitButler client releases
 
 # 🐿 Releases
 
+## v0.2.1
+
+#### Friday, April 28, 2023
+
+Bug fixes and minor improvements.
+
 ## v0.2.0
 
 #### Friday, April 21, 2023
