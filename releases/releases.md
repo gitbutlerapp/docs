@@ -4,6 +4,20 @@ description: Changelog for our GitButler client releases
 
 # 🐿 Releases
 
+## v0.3.0
+
+#### Friday, May 22, 2023
+
+With this new release, you can now link a project on multiple computers to sync the working directory history of both of them. You can't quite actually check out those working directory states from one into the other, but it's a step closer.
+
+<figure><img src="../.gitbook/assets/CleanShot 2023-05-22 at 13.56.45@2x.png" alt=""><figcaption><p>Link multiple clients on multiple computers to the same GitButler project to sync history</p></figcaption></figure>
+
+Another nice addition is the feedback icon (little envelope looking thing at the bottom) that you can click at any time to share feedback with us or send us your logs/data in case there was an issue so that we can recreate and debug it.
+
+<figure><img src="../.gitbook/assets/CleanShot 2023-05-22 at 13.58.33@2x.png" alt=""><figcaption><p>Share yo feedback.</p></figcaption></figure>
+
+There were also a number of speed increases and some more behind the scenes data structure changes, but don't worry about those.
+
 ## v0.2.1
 
 #### Friday, April 28, 2023
@@ -16,7 +30,7 @@ Bug fixes and minor improvements.
 
 New layout for the project page and redesign of the activity graphs in preparation for presenting more Git data in the sidebar. Also added some new styling to the commit page and have changed how we store our snapshot data so that it doesn't pollute the Git project space.
 
-![](<../.gitbook/assets/CleanShot 2023-04-21 at 09.31.00@2x.png>)![](<../.gitbook/assets/CleanShot 2023-04-21 at 09.33.06@2x.png>)
+![](<../.gitbook/assets/CleanShot 2023-04-21 at 09.31.00@2x.png>) ![](<../.gitbook/assets/CleanShot 2023-04-21 at 09.33.06@2x.png>)
 
 ## v0.1.0
 
@@ -30,23 +44,21 @@ Some bug fixes and improvements, but the big thing is our new shiny icon!
 
 #### Tue, April 11, 2023
 
-Fixed the terminal :joy:&#x20;
+Fixed the terminal :joy:
 
 ## v0.0.23
 
 #### Thu, April 6, 2023
 
-This update ships with a new command palette for (better) fast access to all your GitButler needs, as well as an integrated Terminal per project.&#x20;
+This update ships with a new command palette for (better) fast access to all your GitButler needs, as well as an integrated Terminal per project.
 
 <figure><img src="../.gitbook/assets/CleanShot 2023-04-06 at 15.56.48@2x.png" alt=""><figcaption><p>New and improved command palette</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/CleanShot 2023-04-06 at 15.53.25@2x.png" alt=""><figcaption><p>New project terminal (soon to be recording)</p></figcaption></figure>
 
-You can also see your git status as you go without having to run `git status` all the time.&#x20;
+You can also see your git status as you go without having to run `git status` all the time.
 
 The terminal is mostly to iron out the bugs. Next up will be recording anything you do in your project terminal along with your file history for even more historical project context.
-
-
 
 ## v0.0.21
 
