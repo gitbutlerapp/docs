@@ -2,7 +2,7 @@
 description: An overview of the GitButler product and beta phase.
 ---
 
-# 🤵♂ Welcome to GitButler
+# Welcome to GitButler
 
 ## Overview
 
