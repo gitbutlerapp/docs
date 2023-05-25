@@ -4,9 +4,19 @@ description: Changelog for our GitButler client releases
 
 # 🐿 Releases
 
+## v0.4.0
+
+#### Thu, May 25, 2023
+
+Hot on the heels of our last release, we're introducing a new "bookmarking" feature. Now you can let GitButler know about important moments in your timelines that you might want to remember or go back to.
+
+![](<../.gitbook/assets/CleanShot 2023-05-25 at 12.55.29@2x.png>)![](<../.gitbook/assets/CleanShot 2023-05-25 at 12.55.43@2x.png>)
+
+You can either create bookmarks by hitting the little bookmark button in the bottom right corner in the timeline, or you can hit Cmd-K to bring up the palette and create a new bookmark from there, wherever you happen to be in the timeline.
+
 ## v0.3.0
 
-#### Friday, May 22, 2023
+#### Monday, May 22, 2023
 
 With this new release, you can now link a project on multiple computers to sync the working directory history of both of them. You can't quite actually check out those working directory states from one into the other, but it's a step closer.
 
@@ -30,7 +40,7 @@ Bug fixes and minor improvements.
 
 New layout for the project page and redesign of the activity graphs in preparation for presenting more Git data in the sidebar. Also added some new styling to the commit page and have changed how we store our snapshot data so that it doesn't pollute the Git project space.
 
-![](<../.gitbook/assets/CleanShot 2023-04-21 at 09.31.00@2x.png>) ![](<../.gitbook/assets/CleanShot 2023-04-21 at 09.33.06@2x.png>)
+![](<../.gitbook/assets/CleanShot 2023-04-21 at 09.31.00@2x.png>) ![](<../.gitbook/assets/CleanShot 2023-04-21 at 09.31.43@2x.png>)
 
 ## v0.1.0
 
