@@ -4,6 +4,18 @@ description: Changelog for our GitButler client releases
 
 # 🐿 Releases
 
+## v0.5.0
+
+#### Thu, July 24, 2023
+
+Well, the wait has been long, but we're back in the swing of things. We came up with a smashing new idea for how to do branches in a way nobody has ever done before and it took us a while to get it all working.&#x20;
+
+<figure><img src="../.gitbook/assets/spaces_Z5O7nIjz0ow1eQWGNs4v_uploads_BIlViOl6zDDdMpPVmI3R_CleanShot 2023-07-24 at 15.png" alt=""><figcaption><p>Virtual branches, light mode, oh my!</p></figcaption></figure>
+
+This is a massive new feature and one you can check out in great detail in [our docs](../features/virtual-branches/).
+
+For now, we've turned off access to the rest of the UI while we concentrate on getting this working, but boy is it cool. We'll get the timeline back in an even bigger and better way soon, but for now, please enjoy the best new way to work since hand tools.
+
 ## v0.4.0
 
 #### Thu, May 25, 2023
