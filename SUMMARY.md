@@ -8,8 +8,12 @@
 
 ## Features
 
+* [🌳 Virtual Branches](features/virtual-branches/README.md)
+  * [🍃 Butler Flow](features/virtual-branches/butler-flow.md)
+  * [🍇 Integration Branch](features/virtual-branches/integration-branch.md)
+  * [🍡 Merging](features/virtual-branches/merging.md)
+  * [💄 Committer Mark](features/virtual-branches/committer-mark.md)
 * [⌛ Timeline](features/timeline.md)
-* [💻 Git Client](features/git-client.md)
 
 ## Community
 

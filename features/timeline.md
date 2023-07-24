@@ -1,10 +1,25 @@
 ---
 description: Find anything that you've ever typed.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
 # ⌛ Timeline
 
-The core feature of GitButler is the project timeline. This tool allows you to find any version of any file that has ever existed in your project from the moment you downloaded GitButler.
+{% hint style="danger" %}
+The timeline feature has been temporarily hidden from the UI while we focus our alpha work on the Virtual Branch functionality. It will come back very soon. :pray:
+{% endhint %}
+
+Another feature of GitButler is the project timeline. This tool allows you to find any version of any file that has ever existed in your project from the moment you downloaded GitButler.
 
 ### Always Watching
 
@@ -22,7 +37,7 @@ The Project dashboard shows you a summary of all the changes we have observed fo
 
 <figure><img src="../.gitbook/assets/CleanShot 2023-03-14 at 16.11.48@2x.png" alt=""><figcaption><p>My project dashboard</p></figcaption></figure>
 
-We also show you what branch you're currently on, if there are uncommitted changes (sort of like `git status`) and allow you to quick commit from here, but we'll cover that more in the [git-client.md](git-client.md "mention") docs.
+We also show you what branch you're currently on, if there are uncommitted changes (sort of like `git status`) and allow you to quick commit from here, but we'll cover that more in the [Broken link](broken-reference "mention") docs.
 
 ### The Player
 
