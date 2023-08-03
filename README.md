@@ -1,5 +1,5 @@
 ---
-description: An overview of the GitButler product and beta phase.
+description: An overview of the GitButler product and alpha phase.
 ---
 
 # 🤵♂ Welcome to GitButler
@@ -8,7 +8,7 @@ description: An overview of the GitButler product and beta phase.
 
 GitButler is a new Source Code Management system designed to manage your branches, record and backup your work, be your Git client, help with your code and much more. Our focus is everything after writing code in your editor and before sharing it on GitHub. We're focused on your working directory and how we can help with everything you do there.
 
-Here you will find documentation on the product and the way that we're running our beta and building our product with your help.
+Here you will find documentation on the product and the way that we're running our alpha and building our product with your help.
 
 ## Why We're Doing This
 

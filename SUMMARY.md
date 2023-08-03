@@ -6,10 +6,16 @@
 
 * [💡 Why GitButler](overview/why-gitbutler.md)
 
+## Guides
+
+* [⭐ Installation and First Steps](guides/installation-and-first-steps.md)
+
 ## Features
 
 * [🌳 Virtual Branches](features/virtual-branches/README.md)
   * [🍃 Butler Flow](features/virtual-branches/butler-flow.md)
+  * [🔱 Branch Lanes](features/virtual-branches/branch-lanes.md)
+  * [🎋 Remote Branches](features/virtual-branches/remote-branches.md)
   * [🍇 Integration Branch](features/virtual-branches/integration-branch.md)
   * [🍡 Merging](features/virtual-branches/merging.md)
   * [💄 Committer Mark](features/virtual-branches/committer-mark.md)
