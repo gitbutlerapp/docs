@@ -6,10 +6,6 @@
 
 * [💡 Why GitButler](overview/why-gitbutler.md)
 
-## Guides
-
-* [⭐ Installation and First Steps](guides/installation-and-first-steps.md)
-
 ## Features
 
 * [🌳 Virtual Branches](features/virtual-branches/README.md)
