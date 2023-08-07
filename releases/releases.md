@@ -4,6 +4,24 @@ description: Changelog for our GitButler client releases
 
 # 🐿 Releases
 
+## v0.6.2
+
+#### Sun, Aug 6, 2023
+
+Two bigger things in this release. The first is that we now have an initial AppImage based Linux build! So fire up your Ubuntu and try it out.
+
+The second is that we have integrated our own basic SSH key based workflow. We had some auth issues due to a hundred ways people auth for Git stuff, so we've provided an option if you prefer to have us own it a bit more.
+
+We generate a ed25519 SSH key for you and provide a simple way for you to add our key to your GitHub profile, which allows us to push and fetch for you without having to deal with that yourself. We will also first attempt to find a key you already use, but if it doesn't work, we have a nice backup.
+
+<figure><img src="../.gitbook/assets/CleanShot 2023-08-07 at 10.01.03@2x.png" alt=""><figcaption><p>Just copy the public sig for our generated key to your server and *blamo*, no more network issues.</p></figcaption></figure>
+
+## v0.6.0
+
+#### Thu, Aug 3, 2023
+
+Mostly bug fixes plus some UX improvments to help with more empty states. Creates an initial virtual branch that is based on whatever git branch you were on when you selected your base branch, which should be helpful from scratch. Improvements to the file watcher and refreshing code. Bunch of stuff like that.
+
 ## v0.5.0
 
 #### Thu, July 24, 2023
