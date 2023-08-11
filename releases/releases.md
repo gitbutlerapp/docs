@@ -4,13 +4,35 @@ description: Changelog for our GitButler client releases
 
 # 🐿 Releases
 
+## v0.7.0
+
+#### Fri, Aug 11, 2023
+
+A few pretty new things, plus some fun behind the scenes stuff in this release.
+
+We're still playing with finding a layout that feels best, so this release lets you preview commits that are in any virtual or remote branch, as well as see what incoming changes from upstream you are behind and need to merge in with a cool peek tray.
+
+<figure><img src="../.gitbook/assets/CleanShot 2023-08-11 at 14.01.03@2x.png" alt=""><figcaption><p>See what commits are in any of your branches, including upstream.</p></figcaption></figure>
+
+Another cool thing is that you can keep notes in each virtual branch. Write out your to do list or other notes for the feature or bugfix you're working on while you're working.
+
+Some other things:
+
+* We are now handling situations where you want to go back to using command line Git for some operations a little better.&#x20;
+* We're now rebasing unpushed commits when you integrate upstream changes (if possible).
+* We auto-resolve conflicted files when we see that there are no more conflict markers in the file.
+* We're adding new refs for our virtual branches so you can access them directly if you want.
+* Buncha bug fixen.
+
+Enjoy!
+
 ## v0.6.2
 
 #### Sun, Aug 6, 2023
 
-Two bigger things in this release. The first is that we now have an initial AppImage based Linux build! So fire up your Ubuntu and try it out.
+Two bigger things in this release. The first is that we now have an initial **AppImage based Linux build!** So fire up your Ubuntu and try it out.
 
-The second is that we have integrated our own basic SSH key based workflow. We had some auth issues due to a hundred ways people auth for Git stuff, so we've provided an option if you prefer to have us own it a bit more.
+The second is that we have integrated our own basic **SSH key based workflow**. We had some auth issues due to a hundred ways people auth for Git stuff, so we've provided an option if you prefer to have us own it a bit more.
 
 We generate a ed25519 SSH key for you and provide a simple way for you to add our key to your GitHub profile, which allows us to push and fetch for you without having to deal with that yourself. We will also first attempt to find a key you already use, but if it doesn't work, we have a nice backup.
 
@@ -20,7 +42,7 @@ We generate a ed25519 SSH key for you and provide a simple way for you to add ou
 
 #### Thu, Aug 3, 2023
 
-Mostly bug fixes plus some UX improvments to help with more empty states. Creates an initial virtual branch that is based on whatever git branch you were on when you selected your base branch, which should be helpful from scratch. Improvements to the file watcher and refreshing code. Bunch of stuff like that.
+Mostly bug fixes plus some UX improvements to help with more empty states. Creates an initial virtual branch that is based on whatever git branch you were on when you selected your base branch, which should be helpful from scratch. Improvements to the file watcher and refreshing code. Bunch of stuff like that.
 
 ## v0.5.0
 
