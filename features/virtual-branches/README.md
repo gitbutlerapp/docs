@@ -8,7 +8,7 @@ description: >-
 
 The main feature of GitButler currently is our virtual branch functionality. Here is a quick video showing off some of what you can do when being able to work on multiple branches at the same time.
 
-{% embed url="https://www.youtube.com/watch?v=rhVO-1ibJTg" %}
+{% embed url="https://www.youtube.com/watch?v=xVZWTmW-d6o" %}
 
 Virtual branches are just like normal Git branches, except that you can work on several of them at the same time.&#x20;
 
