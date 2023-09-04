@@ -4,6 +4,18 @@ description: Changelog for our GitButler client releases
 
 # 🐿 Releases
 
+## v0.7.1
+
+#### Fri, Sep 1, 2023
+
+A couple of important UI updates in this release as we continue to figure out exactly how we want some of these interactions to feel like.
+
+There is a new mini-tray under each applied branch name that list the changed files in that branch and shows your branch notes there. The sidebar no longer shows you applied branches, just unapplied ones, so there is a cleaner split between what is applied and unapplied.
+
+<figure><img src="../.gitbook/assets/unnamed.png" alt=""><figcaption><p>Some new UI updates</p></figcaption></figure>
+
+We've also made a lot of improvements to the networking code, so your push/fetches are more likely to not have issues. Plus a bunch of other little things, enjoy!
+
 ## v0.7.0
 
 #### Fri, Aug 11, 2023
