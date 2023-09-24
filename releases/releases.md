@@ -4,6 +4,46 @@ description: Changelog for our GitButler client releases
 
 # 🐿 Releases
 
+## v0.8.0
+
+#### Fri, Sep 22, 2023
+
+It's been a few weeks since our last release, so there are a lot of fun things in this one.
+
+#### Partial Commits
+
+You can now select individual files or lines and do partial commits, in case you want to split up some work into a couple of separated commits.
+
+<figure><img src="../.gitbook/assets/CleanShot 2023-09-23 at 16.20.17@2x.png" alt=""><figcaption></figcaption></figure>
+
+#### Verified Commits
+
+We've added a new option to enable commit signing using the ed25519 key that GitButler generates, which means you can upload that key as a signing key to GitHub to get [verified commits](../features/virtual-branches/verifying-commits.md).
+
+<figure><img src="../.gitbook/assets/CleanShot 2023-09-23 at 16.28.43@2x.png" alt="" width="563"><figcaption></figcaption></figure>
+
+#### More AI Fun
+
+Better and much faster AI commit message generation, including new "Extra concise" and "Use emojis" options. AI can now also automatically generate branch names for you.
+
+<figure><img src="../.gitbook/assets/CleanShot 2023-09-23 at 16.27.14@2x.png" alt="" width="563"><figcaption><p>Better commit message generation</p></figcaption></figure>
+
+#### Better authentication
+
+You can now define your preferred authentication method per project and provide a password for private keys.
+
+<figure><img src="../.gitbook/assets/CleanShot 2023-09-23 at 16.25.51@2x.png" alt=""><figcaption><p>More SSH key options</p></figcaption></figure>
+
+#### Upstream Merging for Virtual Branches
+
+If you push a virtual branch and then someone fetches it and does some work on it and pushes it up again, GitButler will now notice that there is upstream work on a virtual branch of yours and we will notify you and allow you to merge it into your local work.
+
+#### And more!
+
+There are also tons of smaller fixes, performance improvements, etc. For example, we've also updated a lot around remote authentication and supported types of remotes, fixed issues with larger repos, sped lots of operations up and more!
+
+
+
 ## v0.7.1
 
 #### Fri, Sep 1, 2023

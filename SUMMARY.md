@@ -16,6 +16,7 @@
   * [🍇 Integration Branch](features/virtual-branches/integration-branch.md)
   * [🍡 Merging](features/virtual-branches/merging.md)
   * [💄 Committer Mark](features/virtual-branches/committer-mark.md)
+  * [✅ Verifying Commits](features/virtual-branches/verifying-commits.md)
 * [⌛ Timeline](features/timeline.md)
 
 ## Community
