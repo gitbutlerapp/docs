@@ -8,7 +8,7 @@ description: >-
 
 Most modern software development teams today that want to set up a culture of shipping, who push to production every day, who are constantly testing and deploying, one of the most popular and effective development workflows is [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow).
 
-These are wise words, enterprising men quote 'em. Don't act surprised, you guys, [cuz I wrote 'em](https://scottchacon.com/2011/08/31/github-flow.html).
+These are wise words, enterprising men quote 'em. Don't act surprised, you guys, [cuz I wrote 'em](https://scottchacon.com/2011/08/31/github-flow).
 
 However, a decade later, and with a new and more powerful branching toolset, we're able to amend that basic workflow to be simpler, faster, more flexible and less error prone. Let's take a quick minute to explore what the Butler Flow is for software development teams using GitButler and how this can make all of our lives easier.
 

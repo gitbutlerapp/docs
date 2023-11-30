@@ -4,6 +4,58 @@ description: Changelog for our GitButler client releases
 
 # 🐿 Releases
 
+## v0.9.0
+
+**Thu, Nov 30, 2023**
+
+After a bit of a release pause, we're back! We've given our wonderful GitButler a total facelift and a lot more. Commit undoing, squashing, amending, GitHub integration and more!
+
+**New Facelift**
+
+<div data-full-width="true">
+
+<figure><img src="../.gitbook/assets/CleanShot 2023-11-30 at 15.43.31@2x.png" alt=""><figcaption><p>The new, improved suit of armor that our Butler wears into battle now.</p></figcaption></figure>
+
+</div>
+
+As you can see, we've cleaned up a lot of the UI, made the multiple branches clearer and simplified the sidebar a lot. We find all of this much cleaner and clearer and we hope you do too.
+
+**New Navigation**
+
+You can now find your personal settings, your project specific settings and feedback buttons at the bottom of the sidebar, and you can change projects easily with our new dropdown menu.
+
+<figure><img src="../.gitbook/assets/CleanShot 2023-11-30 at 15.46.17@2x.png" alt=""><figcaption><p>Project settings are now easy to get to.</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/CleanShot 2023-11-30 at 15.47.37@2x.png" alt=""><figcaption><p>Change your active project quickly with the new dropdown switcher.</p></figcaption></figure>
+
+**Drill down into file diffs**
+
+Now instead of diffs being expandable within the lane, clicking on a file path expands the diff to the right side. We've found that this makes the UI much cleaner and simpler to understand and navigate.
+
+<figure><img src="../.gitbook/assets/CleanShot 2023-11-30 at 15.48.40@2x.png" alt=""><figcaption><p>Dark mode still looks good too.</p></figcaption></figure>
+
+**Amend, Squash and Undo**
+
+Now we have more ways to fix up your commit history. If you forgot one little change, you can edit the file and then drag that file path down into your last commit to amend it.&#x20;
+
+<div align="center">
+
+<figure><img src="../.gitbook/assets/CleanShot 2023-11-30 at 15.32.33@2x.png" alt=""><figcaption><p>Drag a file change down into the last commit to amend it.</p></figcaption></figure>
+
+</div>
+
+If you have multiple commits and want to squash them together, you can simply drag one commit on top of the previous one to squash. If you committed and decide that you want to undo that commit, you can just hit the new "Undo" button.
+
+<figure><img src="../.gitbook/assets/CleanShot 2023-11-30 at 15.33.06@2x.png" alt=""><figcaption><p>Squash commits together or just undo them with a click.</p></figcaption></figure>
+
+**GitHub Integration**
+
+You can now authenticate with GitHub in your GitButler client. This allows us to open Pull Requests for you, or pull down PRs for you to inspect or apply locally, next to your existing branches. Just head to your user settings to authenticate GitHub.
+
+<figure><img src="../.gitbook/assets/CleanShot 2023-11-30 at 15.56.42@2x.png" alt=""><figcaption><p>Integrate Pull Requests with GitHub authentication</p></figcaption></figure>
+
+We took a while to lift this face, but now we will be back in the swing of things, releasing much more often. Hold on for a ride!
+
 ## v0.8.0
 
 #### Fri, Sep 22, 2023

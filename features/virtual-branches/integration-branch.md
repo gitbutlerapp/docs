@@ -42,11 +42,6 @@ The worst that would happen is that you do some complex `git add -i` patch stagi
 
 ### Recovering or Stopping GitButler Usage
 
-If you do commit to the `gitbutler/integration` branch and you want to keep that and move that work to another branch, it's a little complicated. Contact us in Discord for help. It is doable, just a little complex and specific to your use case.
-
 If you want to stop using GitButler and go back to using stock Git commands for committing and branching, simply check out another branch. GitButler will realize that you've changed it's branch and stop functioning until you reset it.
 
 To help with remembering where you were, the integration commit should have the branch name and commit SHA that you were on when GitButler was initially activated. You should be able to easily go back to that branch and it's last known commit state.
-
-
-

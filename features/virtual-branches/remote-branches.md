@@ -10,19 +10,15 @@ For instance, when a coworker pushes a new branch to the server and opens a pull
 
 We will show these new remote branches in this sidebar.
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-08-02 at 13.43.32@2x.png" alt=""><figcaption><p>Your remote (and also legacy local) Git branches</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2023-11-30 at 17.24.49@2x.png" alt=""><figcaption><p>Remote branches will show up here automatically.</p></figcaption></figure>
 
 ### Applying Remote Branches
 
-Remote branches cannot be applied like virtual branches, we need to convert them to the more rich virtual branch data structure first. To do this, just left (secondary) click on a branch to see the "Apply" button.
+Remote branches cannot be applied like virtual branches, we need to convert them to the more rich virtual branch data structure first. To do this, just click on a branch to see the "Apply" button.
 
-&#x20;
-
-<figure><img src="../../.gitbook/assets/CleanShot 2023-08-02 at 13.46.16@2x.png" alt="" width="327"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2023-11-30 at 17.26.46@2x.png" alt=""><figcaption><p>Click Apply to add this remote branch to your list of applied branches and pull it's changes into your working directory.</p></figcaption></figure>
 
 Clicking the "apply" button will turn that remote branch into a tracked virtual branch (sort of like `git checkout -b branch-name origin/branch-name`) and will immediately try to apply it to your working directory as an applied virtual branch. If it can't do so cleanly, it will simply store it as an unapplied virtual branch that you can try to apply later.
 
-### Ahead/Behind
 
-You may also notice some numbers like `2/4` next to the branch name. This is the ahead/behind data, so 2/4 would mean that this branch has 2 commits on it that are not on your base branch (something like `origin/master`) and 4 commits behind (ie, `origin/master` has four commits on it that this branch does not have).
 

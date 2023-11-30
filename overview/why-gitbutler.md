@@ -1,3 +1,7 @@
+---
+description: The GitButler manifesto, as it were.
+---
+
 # 💡 Why GitButler
 
 Everyone loves a good manifesto. So, why is there a need for a new Git client in the world? Don't we have enough? Isn't the command line just fine?

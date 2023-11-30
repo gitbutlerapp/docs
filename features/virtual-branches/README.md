@@ -12,7 +12,7 @@ The main feature of GitButler currently is our virtual branch functionality. Her
 
 Virtual branches are just like normal Git branches, except that you can work on several of them at the same time.&#x20;
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-07-24 at 15.07.10@2x.png" alt=""><figcaption><p>An example of working on two branches at the same time, while pending upstream changes wait for you to merge them.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2023-11-30 at 16.25.19@2x.png" alt=""><figcaption><p>An example of working on two branches at the same time, while pending upstream changes wait for you to merge them.</p></figcaption></figure>
 
 {% hint style="danger" %}
 **Quick warning.** You cannot use both GitButler virtual branches and normal Git branching commands at the same time, you will have to "commit" to one approach or the other.&#x20;
@@ -26,7 +26,7 @@ To understand why and how to get out of this, please read our [integration-branc
 
 With virtual branches, you are not working off of local main or master branches. Everything that you do is on a virtual branch, automatically.&#x20;
 
-Similar to GitHub, where you specify a base branch to use to merge your Pull Requests into by default, GitButler requires a "Base Branch". This is understood to be whatever your concept of "production" is. Typically what represents deployed, production code that cannot or should not be rolled back. Generally this would be something like `origin/master` or `origin/main`.
+Similar to GitHub, where you specify a default branch to use to merge your Pull Requests into by default, GitButler requires a "Base Branch". This is understood to be whatever your concept of "production" is. Typically what represents deployed, production code that cannot or should not be rolled back. Generally this would be something like `origin/master` or `origin/main`.
 
 Once a base branch is specified, everything in your working directory that differs from it is branched code and must belong to a virtual branch.
 
@@ -46,7 +46,7 @@ Since there isn't just a single branch you can be on, you don't "switch" branche
 
 Each of these actions is as simple as checking or unchecking a box next to the branch name.
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-07-24 at 15.24.22@2x.png" alt="" width="325"><figcaption><p>Check or uncheck to apply or unapply virtual branches.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2023-11-30 at 16.26.58@2x.png" alt="" width="375"><figcaption><p>Click "unapply" for any branch to stash it and remove it's changes from the working directory</p></figcaption></figure>
 
 To delete a virtual branch, you simply unapply it, then left click on it and choose "delete".
 
@@ -54,12 +54,12 @@ To delete a virtual branch, you simply unapply it, then left click on it and cho
 
 Eventually you will have work merged into the branch you chose as your base branch, which will need to be reconciled with all your virtual branches to keep them up to date with where they will eventually need to merge into.
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-07-24 at 15.27.05@2x.png" alt=""><figcaption><p>If we see new upstream work on the branch you chose as your base, we will show you in a special lane.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2023-11-30 at 16.46.58@2x.png" alt=""><figcaption><p>Click "Merge into common base" to integrate upstream changes into your virtual branches.</p></figcaption></figure>
 
-Upstream work will automatically be shown in a special leftmost lane. When you click "Merge Upstream", we will attempt to integrate that work with your existing virtual branches. Each branch, applied or unapplied, will try to be updated with the new work.
+Upstream work will automatically be shown in your sidebar in the "Trunk" section. When you click "Merge into common base" (or the "Update" button next to your "Applied Branches" section), we will attempt to integrate that work with your existing virtual branches. Each branch, applied or unapplied, will try to be updated with the new work.
 
 {% hint style="info" %}
-Eventually we will attempt to rebase any commits in your virtual branches on top of new work (similar to running a `git pull --rebase` on each branch). However, for the alpha product, we are simply creating a merge commit into each one to get them up to date.
+We will attempt to rebase any commits in your virtual branches on top of new work (similar to running a `git pull --rebase` on each branch). However, if you already have commits in your branch, we have to create a merge commit to get them up to date.
 {% endhint %}
 
 If we cannot update a branch because of merge conflicts, we will unapply the branch automatically and leave it in an unmerged state. You can identify these branches with the blue dot next to them in your branch listing.
@@ -68,7 +68,7 @@ If a virtual branch is entirely integrated into upstream, it will be removed and
 
 ### Conflicting Branches
 
-You cannot have conflicting branches applied at the same time. Any virtual branch that conflicts with branches that are currently applied will be noted with a red dot and you cannot apply them until you have unapplied the branch or branches they conflict with.
+You cannot have conflicting branches applied at the same time. Any virtual branch that conflicts with branches that are currently applied will be noted you cannot apply them until you have unapplied the branch or branches they conflict with.
 
 ### Merge Conflicts
 
