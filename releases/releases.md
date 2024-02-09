@@ -4,6 +4,20 @@ description: Changelog for our GitButler client releases
 
 # 🐿 Releases
 
+### We have moved our releases announcements to our Discord channel. Come join us for updates.
+
+Join our Discord [#releases ](https://discord.com/channels/1060193121130000425/1183737922785116161)channel.
+
+If you haven't joined our Discord server, you can join [here](https://discord.com/invite/MmFkmaJ42D).
+
+
+
+***
+
+## Older Announcements
+
+_(this is no longer being kept up to date, but we'll leave them in here for fun)_
+
 ## v0.9.0
 
 **Thu, Nov 30, 2023**
