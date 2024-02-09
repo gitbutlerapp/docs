@@ -19,6 +19,10 @@
   * [✅ Verifying Commits](features/virtual-branches/verifying-commits.md)
 * [⌛ Timeline](features/timeline.md)
 
+## Development
+
+* [✍ Debugging](development/contact-us.md)
+
 ## Community
 
 * [✍ Contact Us](community/contact-us.md)
