@@ -21,7 +21,7 @@
 
 ## Development
 
-* [✍ Debugging](development/contact-us.md)
+* [🐛 Debugging](development/contact-us.md)
 
 ## Community
 

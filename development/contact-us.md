@@ -1,4 +1,4 @@
-# ✍ Debugging
+# 🐛 Debugging
 
 If you are having technical issues with the GitButler client, here are a few things you can do to help us help you. Or help yourself.
 
