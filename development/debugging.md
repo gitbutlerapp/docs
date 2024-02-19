@@ -4,7 +4,7 @@ If you are having technical issues with the GitButler client, here are a few thi
 
 If you get stuck or need help with anything, hit us up over on Discord:
 
-[GitButler Discord](https://discord.gg/wDKZCPEjXC)
+[GitButler Discord](https://discord.gg/MmFkmaJ42D)
 
 ### Logs
 

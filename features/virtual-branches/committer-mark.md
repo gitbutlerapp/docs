@@ -26,5 +26,5 @@ Being a supporter also comes with other fun benefits, but this is the only featu
 
 ### Engage in the Community
 
-There is another really easy way to toggle these off, but we ask that you ask us. Join our [Discord server](https://discord.com/invite/wDKZCPEjXC), submit a bug or a feature request and we'll tell you the secret setting. :secret:
+There is another really easy way to toggle these off, but we ask that you ask us. Join our [Discord server](https://discord.com/invite/MmFkmaJ42D), submit a bug or a feature request and we'll tell you the secret setting. :secret:
 
