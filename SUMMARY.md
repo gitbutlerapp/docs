@@ -19,6 +19,10 @@
   * [✅ Verifying Commits](features/virtual-branches/verifying-commits.md)
 * [⌛ Timeline](features/timeline.md)
 
+## Troubleshooting
+
+* [🌎 Fetch / Push issues](troubleshooting/fetch-push.md)
+
 ## Development
 
 * [🐛 Debugging](development/debugging.md)
