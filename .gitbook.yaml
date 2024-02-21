@@ -1,0 +1,5 @@
+root: ./
+
+structure:
+  readme: FIRST_PAGE.md
+  summary: SUMMARY.md
