@@ -10,5 +10,5 @@ submit a pull request.
 
 ## License
 
-The content is under a CC0 public license, so have fun.A
+The content is under a CC0 public license, so have fun.
 
