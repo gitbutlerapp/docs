@@ -1,5 +1,5 @@
-root: ./
+root: ./docs/
 
 structure:
-  readme: FIRST_PAGE.md
+  readme: README.md
   summary: SUMMARY.md
