@@ -14,7 +14,7 @@ While some commands cannot work well because of this single-branch limitation (`
 
 The way that we handle this relatively well is by creating an "integration" commit every time you change the committed state of your collective virtual branches.
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-07-24 at 17.17.44@2x.png" alt=""><figcaption><p>An example "integration" commit.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2023-07-24 at 17.17.44@2x.png" alt=""><figcaption><p>An example "integration" commit.</p></figcaption></figure>
 
 So what is an "integration" commit? Well, when you apply or unapply branches, or you commit on one of your applied branches, you change the state of what GitButler sees as your overall committed state with regards to your working directory.&#x20;
 

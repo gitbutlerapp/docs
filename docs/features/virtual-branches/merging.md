@@ -18,7 +18,7 @@ In other words, branches can only conflict with upstream changes and you can onl
 
 When you do have an upstream conflicting branch, you can choose to apply it, which will unapply all other branches and apply this one with conflict markers into your files. Your only branch lane will look something like this:
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-07-24 at 15.38.24@2x.png" alt="" width="375"><figcaption><p>A virtual branch in a conflicted state.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2023-07-24 at 15.38.24@2x.png" alt="" width="375"><figcaption><p>A virtual branch in a conflicted state.</p></figcaption></figure>
 
 While the branch is in this state, you cannot apply other branches or unapply this one. _(We are working on a way to abort this state, but right now you cannot)._
 
@@ -26,6 +26,6 @@ You need to resolve each issue, then hit the "Resolve" button next to each file 
 
 Once all the files are marked as resolved, you need to commit the resolved merge. This will write a merge commit with both parents so that you have an updated merge base.
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-07-24 at 16.56.25@2x.png" alt="" width="375"><figcaption><p>Now you need to commit your resolution.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2023-07-24 at 16.56.25@2x.png" alt="" width="375"><figcaption><p>Now you need to commit your resolution.</p></figcaption></figure>
 
 Once the resolution is committed, you can unapply and apply branches again.

@@ -10,7 +10,7 @@ This could be a local virtual branch that you're working on, or it could be a vi
 
 The interface looks something like this:
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-11-30 at 16.23.30@2x.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2023-11-30 at 16.23.30@2x.png" alt=""><figcaption></figcaption></figure>
 
 ## The Sidebar
 
@@ -20,7 +20,7 @@ The sidebar on the left shows you the stashed virtual branches that you have and
 
 The "Trunk" is the view of the base branch that you've set. It will show you essentially a `git log` of `origin/master` or whatever you set as your base branch, and it will show you if there are any commits upstream that you have not integrated locally yet. We will automatically check for new upstream changes every few minutes, but you can also click the update button to check immediately.
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-11-30 at 17.07.10@2x.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2023-11-30 at 17.07.10@2x.png" alt=""><figcaption></figcaption></figure>
 
 ### Applied Branches
 
@@ -40,7 +40,7 @@ The next part shows "Stashed branches", which are the virtual branches that you 
 
 When you click on "Applied Branches", you will see your main view, which is a list of the virtual branches that are currently applied into your working directory.
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-11-30 at 17.12.07@2x.png" alt=""><figcaption><p>Here we have two virtual branches. The first one has a PR open, local work that is not pushed and local work that is not committed.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2023-11-30 at 17.12.07@2x.png" alt=""><figcaption><p>Here we have two virtual branches. The first one has a PR open, local work that is not pushed and local work that is not committed.</p></figcaption></figure>
 
 For each virtual branch lane, there is a list of uncommitted work and committed work. If there is uncommitted work, can type a commit message and commit it locally.
 
@@ -50,7 +50,7 @@ You can drag the uncommitted files from one lane to another in order to separate
 
 You can inspect any file change that is uncommitted by clicking on the file path. GitButler will expand a inspector to the right to show you the diff. If you are logged in, our AI system will try to summarize the work in each hunk as well.
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-11-30 at 17.14.04@2x.png" alt=""><figcaption><p>Inspecting our file change</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2023-11-30 at 17.14.04@2x.png" alt=""><figcaption><p>Inspecting our file change</p></figcaption></figure>
 
 Once you have committed work, you will see it at the bottom as a list of commits under a tag that indicates that they are local. If you hit the "Push" button, it will attempt to push these commits to the same remote server that your base branch is on.
 
@@ -62,16 +62,16 @@ Any further commits will be marked as local until you push them.
 
 You can always undo your last commit by hitting the "Undo" button on the commit.
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-11-30 at 17.17.17@2x.png" alt="" width="375"><figcaption><p>Hit undo to undo.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2023-11-30 at 17.17.17@2x.png" alt="" width="375"><figcaption><p>Hit undo to undo.</p></figcaption></figure>
 
 ### Amending Commits
 
 If you made a commit and then make another small change and want it to be in your last commit, you can simply drag the file on top of the last commit to amend it.
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-11-30 at 17.20.14@2x.png" alt="" width="563"><figcaption><p>Drag a file onto the last commit to amend the commit to include that file change.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2023-11-30 at 17.20.14@2x.png" alt="" width="563"><figcaption><p>Drag a file onto the last commit to amend the commit to include that file change.</p></figcaption></figure>
 
 ### Squashing Commits
 
 If you want to squash two commits together, just start dragging one of the commits and the squash targets will light up.
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-11-30 at 17.18.25@2x.png" alt="" width="563"><figcaption><p>Just drag and drop to squash commits.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2023-11-30 at 17.18.25@2x.png" alt="" width="563"><figcaption><p>Just drag and drop to squash commits.</p></figcaption></figure>

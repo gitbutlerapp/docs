@@ -12,7 +12,7 @@ The main feature of GitButler currently is our virtual branch functionality. Her
 
 Virtual branches are just like normal Git branches, except that you can work on several of them at the same time.&#x20;
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-11-30 at 16.25.19@2x.png" alt=""><figcaption><p>An example of working on two branches at the same time, while pending upstream changes wait for you to merge them.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2023-11-30 at 16.25.19@2x.png" alt=""><figcaption><p>An example of working on two branches at the same time, while pending upstream changes wait for you to merge them.</p></figcaption></figure>
 
 {% hint style="danger" %}
 **Quick warning.** You cannot use both GitButler virtual branches and normal Git branching commands at the same time, you will have to "commit" to one approach or the other.&#x20;
@@ -46,7 +46,7 @@ Since there isn't just a single branch you can be on, you don't "switch" branche
 
 Each of these actions is as simple as checking or unchecking a box next to the branch name.
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-11-30 at 16.26.58@2x.png" alt="" width="375"><figcaption><p>Click "unapply" for any branch to stash it and remove it's changes from the working directory</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2023-11-30 at 16.26.58@2x.png" alt="" width="375"><figcaption><p>Click "unapply" for any branch to stash it and remove it's changes from the working directory</p></figcaption></figure>
 
 To delete a virtual branch, you simply unapply it, then left click on it and choose "delete".
 
@@ -54,7 +54,7 @@ To delete a virtual branch, you simply unapply it, then left click on it and cho
 
 Eventually you will have work merged into the branch you chose as your base branch, which will need to be reconciled with all your virtual branches to keep them up to date with where they will eventually need to merge into.
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-11-30 at 16.46.58@2x.png" alt=""><figcaption><p>Click "Merge into common base" to integrate upstream changes into your virtual branches.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2023-11-30 at 16.46.58@2x.png" alt=""><figcaption><p>Click "Merge into common base" to integrate upstream changes into your virtual branches.</p></figcaption></figure>
 
 Upstream work will automatically be shown in your sidebar in the "Trunk" section. When you click "Merge into common base" (or the "Update" button next to your "Applied Branches" section), we will attempt to integrate that work with your existing virtual branches. Each branch, applied or unapplied, will try to be updated with the new work.
 
@@ -74,7 +74,7 @@ You cannot have conflicting branches applied at the same time. Any virtual branc
 
 If a virtual branch does have a conflict with your upstream branch and is in a blue dot state, you can fix it by applying it. Applying a conflicting branch will first un-apply all existing virtual branches, then put the merge conflict markers into your working directory and mark conflicted files for you.
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-07-24 at 15.38.30@2x.png" alt="" width="375"><figcaption><p>Files in a conflicted state</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2023-07-24 at 15.38.30@2x.png" alt="" width="375"><figcaption><p>Files in a conflicted state</p></figcaption></figure>
 
 You will need to resolve each file that is marked, then click "Resolve" under each one. Once all files are resolved, you need to commit to create the merge commit that resolves it. Now it is up to date and can be unapplied or applied again easily.
 

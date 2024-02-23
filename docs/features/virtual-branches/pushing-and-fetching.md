@@ -2,7 +2,7 @@
 description: How to setup GitButler to communicate with your upstream server
 ---
 
-# 🛤 Pushing and Fetching
+# 🛤️ Pushing and Fetching
 
 Currently GitButler will only do network communication over the SSH protocol, so you need to make sure that it can access an SSH key that is authorized to push to your upstream server.
 
@@ -24,6 +24,6 @@ If you go to your Account area (click on the link in the top right corner of you
 
 In GitHub, you can do that [here](https://github.com/settings/ssh/new). In GitLab, it's [here](https://gitlab.com/-/profile/keys). If you're running something else, it should be a similar process, but it has to be SSH and able to handle Ed25519 keys.
 
-<figure><img src="../../.gitbook/assets/CleanShot 2023-08-09 at 13.08.18@2x.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2023-08-09 at 13.08.18@2x.png" alt=""><figcaption></figcaption></figure>
 
 Once that's done, GitButler will be able to automatically fetch upstream work and push new branches to your upstream server.

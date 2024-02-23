@@ -35,13 +35,13 @@ These changes allow us to reconstruct what your working directory looked like at
 
 The Project dashboard shows you a summary of all the changes we have observed for the last few days. This includes any changes to any files and also any git commands (commits, pushes, fetches) that we've seen.
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-03-14 at 16.11.48@2x.png" alt=""><figcaption><p>My project dashboard</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2023-03-14 at 16.11.48@2x.png" alt=""><figcaption><p>My project dashboard</p></figcaption></figure>
 
 We also show you what branch you're currently on, if there are uncommitted changes (sort of like `git status`) and allow you to quick commit from here, but we'll cover that more in the [Broken link](broken-reference "mention") docs.
 
 ### The Player
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-03-16 at 17.20.07@2x.png" alt=""><figcaption><p>Working directory history player</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2023-03-16 at 17.20.07@2x.png" alt=""><figcaption><p>Working directory history player</p></figcaption></figure>
 
 Once you have some work saved, you can rewind your working directories time to see every change. Load in day playlists of sessions to find by time, or filter down to the history of a single file. Hit play to watch your changes happen in the order you applied them.
 
@@ -49,6 +49,6 @@ Once you have some work saved, you can rewind your working directories time to s
 
 If you sign in to GitButler Cloud then you can go into the settings of your project (the little gear icon on the top right of the project view) and opt into sending your data to your account on our servers. This will back up all your local history several times a day if you're online.
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-03-14 at 16.16.45@2x.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2023-03-14 at 16.16.45@2x.png" alt=""><figcaption></figcaption></figure>
 
 This can be toggled off at any time to stop backing up your data.
