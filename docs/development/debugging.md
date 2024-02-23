@@ -2,11 +2,9 @@
 
 If you are having technical issues with the GitButler client, here are a few things you can do to help us help you. Or help yourself.
 
-If you get stuck or need help with anything, hit us up over on Discord:
+If you get stuck or need help with anything, hit us up over on Discord, here's [GitButler Discord Server Link](https://discord.gg/MmFkmaJ42D)
 
-[GitButler Discord](https://discord.gg/MmFkmaJ42D)
-
-### Logs
+## Logs
 
 Often the most helpful thing is to look at the logs. GitButler is a Tauri app, so the logs are in your OS's [app log directory](https://docs.rs/tauri/latest/tauri/api/path/fn.app\_log\_dir.html). This should be:
 
@@ -44,7 +42,7 @@ In this directory, there should be rolling daily logs:
 
 ```
 
-### Data Files
+## Data Files
 
 GitButler also keeps it's own data about each of your projects. The virtual branch metadata, your user config stuff, a log of changes in each file, etc. If you want to inspect what GitButler is doing or debug or reset everything, you can go to our data directory.
 
