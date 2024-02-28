@@ -44,6 +44,12 @@ In some cases, the git remote may be setup on a port number other than 22. If th
 
 As a workaround you may set your remote in the [SSH format](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols) (eg. `ssh://git@example.com:3022/foo/bar.git`)
 
+#### Updating virtual branches when the respective remote has new commits
+
+If you have added a remote branch to your active workspace in GitButler, or pushed a virtual branch to the remote, and new commits are added to the remote branch, there is currently no way to sync those new commits into the existing virtual branch in GitButler. This is being tracked in the GitHub issue [#2649](https://github.com/gitbutlerapp/gitbutler/issues/2649). 
+
+The current workaround is move any local work that has not been pushed to the remote (including commits) to a new empty virtual branch. Then, delete the virtual branch that has new commits on the remote. Update the trunk by clicking the update button next to the word "Trunk" in the sidebar on the left. Then selecting the remote branch that has the new commits from the branch list in the sidebar, and clicking the "Apply +" button that appears above the list of most recent commits for that branch. Once the branch has been applied, you can then drag the changes and commits back over from the virtual branch you created earlier, once any merge conflicts have been dealt with. 
+
 ### Help on Discord
 
 If none of the available options helps, feel free to hop on our [Discord](https://discord.gg/MmFkmaJ42D) and we will be happy to help you out.
