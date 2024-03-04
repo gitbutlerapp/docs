@@ -6,7 +6,7 @@ No worries, the main stuff in GitButler stays the same whether you pay or not.
 
 But hey, we're all about building a cool gang here. We want to know who really digs our butler. And those early supporters? They're like VIPs to us.
 
-## ✨ Perks for Early Supporters
+## Perks for Early Supporters ✨
 
 * Access to our Early Bird Discord room, for life
 * Invitations to exclusive Berlin parties, when it's warm here
@@ -19,7 +19,7 @@ Your support helps us grow and make GitButler even better. Join us on this adven
 
 ***
 
-## 🎩 How to Support Us
+## How to Support Us 🎩
 
 You need to have a GitButler account to support us. If you don't have one, [sign up](https://app.gitbutler.com) first.
 
