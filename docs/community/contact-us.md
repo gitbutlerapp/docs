@@ -8,6 +8,4 @@ The simplest way to get in touch with us is to email us at [hello@gitbutler.com]
 
 ### Discord
 
-We are also available to chat on our Discord server:
-
-[GitButler Discord](https://discord.gg/MmFkmaJ42D)
+We are also available to chat on our Discord server: [GitButler Discord](https://discord.gg/MmFkmaJ42D)
