@@ -1,7 +1,6 @@
 # GitButler Documentation
 
-This is the GitButler documentation, which is hosted by [https://gitbook.com](GitBook) at
-[https://docs.gitbutler.com](docs.gitbutler.com).
+This is the GitButler documentation, which is hosted by [Gitbook](https://gitbook.com) at [docs.gitbutler.com](https://docs.gitbutler.com).
 
 ## Contributing
 

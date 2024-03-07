@@ -25,10 +25,6 @@ By default, GitButler will credit itself as the "committer" on any virtual branc
 
 Now, we realize that not everyone will want this, so there are **two ways** to turn off this functionality.
 
-## GitButler Supporters
-
-The first is to become a GitButler Supporter. If you go to: [https://app.gitbutler.com/supporter](https://app.gitbutler.com/supporter), you can pay $5 per month to join our supporters group, which lets you toggle the setting on and off in your client.
-
 Being a supporter also comes with other fun benefits, but this is the only feature based one.
 
 ## Engage in the Community
