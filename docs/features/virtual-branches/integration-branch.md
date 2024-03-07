@@ -10,15 +10,22 @@ We're getting the git data to think in three dimensions, then asking 2-D Git how
 
 While some commands cannot work well because of this single-branch limitation (`commit`, `checkout`), we do try our best to keep everything in a state where most other commands work reasonably well. Anything having to do with the index or HEAD is a little problematic, but doable in a smooshed state (all branches look like one), while commands like `log` or `blame` work totally fine with no shenanigans.
 
-### The Integration Commit
+## The Integration Commit
 
 The way that we handle this relatively well is by creating an "integration" commit every time you change the committed state of your collective virtual branches.
 
-<figure><img src="../../../.gitbook/assets/CleanShot 2023-07-24 at 17.17.44@2x.png" alt=""><figcaption><p>An example "integration" commit.</p></figcaption></figure>
+<div align="center">
+  <figure>
+    <img src="../../../.gitbook/assets/CleanShot 2023-07-24 at 17.17.44@2x.png" alt="">
+    <figcaption>
+      <p><i>An "integration" commit example.</i></p>
+    </figcaption>
+  </figure>
+</div>
 
 So what is an "integration" commit? Well, when you apply or unapply branches, or you commit on one of your applied branches, you change the state of what GitButler sees as your overall committed state with regards to your working directory.&#x20;
 
-### Status, Diff and Log
+## Status, Diff and Log
 
 To keep Git command output for things that look at the index and HEAD (such as `status` or `diff`) somewhat sane, we modify your index to look like the union of all the committed states of all your applied virtual branches. This makes `git diff` and `git status` behave more or less like you would expect.&#x20;
 
@@ -28,19 +35,19 @@ However, to help out, we also write out a branch with a custom commit message th
 
 If you run `git log`, the first commit should be our custom commit message and the tree of that commit is the union of all the committed work on all your applied virtual branches, as though they were all merged together into one (something stock Git can understand).
 
-### Committing, Branching, Checking Out
+## Committing, Branching, Checking Out
 
 However, if you try to use something that writes to HEAD, like `git commit` or `git checkout`, then you might have some headaches. By default, our client will simply overwrite the `gitbutler/integration` branch commit whenever something significant changes.
 
 We won't touch the working directory in an unexpected way, so whatever you commit won't be lost, but the commit itself will be forgotten.  Don't do branch stuff in stock Git while trying to use GitButler for now. We have ideas on how to make this somewhat doable in the future, but right now it's easier on everyone to stick with one or the other.
 
-### Git Add and the Index
+## Git Add and the Index
 
 If you attempt to modify the index directly (running `git add` or `git rm`), GitButler won't notice or care. It will simply overwrite it with whatever it needs during it's operations, so while I wouldn't do it, there is also not a lot of danger.&#x20;
 
 The worst that would happen is that you do some complex `git add -i` patch staging and then we wipe it out by rewriting the index. But again, you shouldn't be using stock Git commands related to committing or branching. You gotta choose one or the other for now, you can't go back and forth super easily.
 
-### Recovering or Stopping GitButler Usage
+## Recovering or Stopping GitButler Usage
 
 If you want to stop using GitButler and go back to using stock Git commands for committing and branching, simply check out another branch. GitButler will realize that you've changed it's branch and stop functioning until you reset it.
 

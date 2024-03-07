@@ -6,7 +6,7 @@ description: How to dig around our internal data to find (nearly) anything
 
 GitButler saves data in a few different ways. As we're still in beta, sometimes things might break and it may look like you've lost work, but you almost certainly haven't. We're pretty good about saving stuff a lot. Here's how to recover almost anything you had in your working directory or virtual branches.
 
-### GitButler References
+## GitButler References
 
 If everything crashes or the UI isn't working at all, you may be surprised to know that even though your virtual branches don't show up in a normal `git branch` output, we _do_ actually constantly write them out as Git references (just not in `refs/heads`).
 
@@ -26,9 +26,14 @@ If you've committed everything on a virtual branch, the reference will just poin
 
 So for example, if I have the following two virtual branches, one fully committed and one with work pending:
 
-<figure><img src="../.gitbook/assets/CleanShot 2024-02-23 at 10.30.27@2x.png" alt=""><figcaption></figcaption></figure>
+<div align="center">
+  <figure>
+    <img src="../.gitbook/assets/CleanShot 2024-02-23 at 10.30.27@2x.png" alt="">
+    <figcaption></figcaption>
+  </figure>
+</div>
 
-&#x20;I can view the git branches like this:
+I can view the git branches like this:
 
 ```
 ❯ git show gitbutler/Convert-tables-to-utf8mb4
@@ -112,7 +117,7 @@ To github.com:gitbutlerapp/web.git
 
 ```
 
-### GitButler Sessions
+## GitButler Sessions
 
 Ok, let's say that your work was not in one of those refs for some reason. Maybe you hit some weird bug and it completely changed everything in a way where now you're sitting on the couch in the dark with a glass of whisky, slowly mumbling the word "GitButler..." and plotting your revenge.
 
@@ -198,7 +203,7 @@ Date:   Fri Feb 9 15:24:28 2024 +0100
 
 While `branches` has interesting data (all our virtual branch coolness), we probably don't need to look at that for data recovery purposes.
 
-### Recovering a Working Directory State
+## Recovering a Working Directory State
 
 The nice thing about this is that we then have an automatic backup of our working directory at very regular intervals whenever we're touching any files in our project directory. You can use Git plumbing commands to do whatever you want with the `wd` subtree in any of those "check" commits.
 
@@ -284,7 +289,7 @@ Date:   Fri Feb 9 13:06:29 2024 +0100
 
 Now the working directory snapshot from a month ago looks like a new commit on top of `origin/master`. It's a real branch, we can check it out, push it, etc.
 
-### CRDTs
+## CRDTs
 
 Now, if you need a version of a file _between_ two session snapshots, you can also technically recover that, because we _also_ keep a CRDT of each file we see changed. These are found in the `session/deltas` tree in each session.&#x20;
 
