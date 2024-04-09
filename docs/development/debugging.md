@@ -44,7 +44,7 @@ In this directory, there should be rolling daily logs:
 
 ## Data Files
 
-GitButler also keeps it's own data about each of your projects. The virtual branch metadata, your user config stuff, a log of changes in each file, etc. If you want to inspect what GitButler is doing or debug or reset everything, you can go to our data directory.
+GitButler also keeps its own data about each of your projects. The virtual branch metadata, your user config stuff, a log of changes in each file, etc. If you want to inspect what GitButler is doing or debug or reset everything, you can go to our data directory.
 
 * **Linux:**  `~/.local/share/com.gitbutler.app/`
 * **macOS:**  `~/Library/Application Support/com.gitbutler.app/`
@@ -67,7 +67,7 @@ In this folder there are a bunch of interesting things.
 4 directories, 4 files
 ```
 
-The `projects.json` file will have a list of your projects metadata:
+The `projects.json` file will have a list of your project's metadata:
 
 ```
 ❯ cat projects.json 
