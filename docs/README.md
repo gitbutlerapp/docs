@@ -12,11 +12,11 @@ Here you will find documentation on the product and the way that we're running o
 
 ## Why We're Doing This
 
-Read about it over [Why GitButler](overview/why-gitbutler.md) Section.
+Read about it in the [Why GitButler](overview/why-gitbutler.md) Section.
 
 ## What We Do
 
-Currently GitButler does two things. It records everything in a working directory that you have so that you can rewind to any point in time for any file you have. It also does a growing set of Git operations, soon to be a full fledged Git client. You can read more about these features here:
+Currently, GitButler does two things. It records everything in a working directory that you have so that you can rewind to any point in time for any file you have. It also does a growing set of Git operations, soon to be a full-fledged Git client. You can read more about these features here:
 
 - [Virtual Branches](features/virtual-branches/README.md)
 - [Timeline](features/timeline.md)
