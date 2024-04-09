@@ -8,8 +8,9 @@ If you get stuck or need help with anything, hit us up over on Discord, here's [
 
 Often the most helpful thing is to look at the logs. GitButler is a Tauri app, so the logs are in your OS's [app log directory](https://docs.rs/tauri/latest/tauri/api/path/fn.app\_log\_dir.html). This should be:
 
-* **Linux:**  `~/.config/com.gitbutler.app/logs/`
-* **macOS:**  `~/Library/Logs/com.gitbutler.app/`
+* **Linux:** `~/.config/com.gitbutler.app/logs/`
+* **macOS:** `~/Library/Logs/com.gitbutler.app/`
+* **Windows:** `C:\Users\[username]\AppData\Roaming\com.domain.appname\logs`
 
 In this directory, there should be rolling daily logs:
 
@@ -46,8 +47,9 @@ In this directory, there should be rolling daily logs:
 
 GitButler also keeps it's own data about each of your projects. The virtual branch metadata, your user config stuff, a log of changes in each file, etc. If you want to inspect what GitButler is doing or debug or reset everything, you can go to our data directory.
 
-* **Linux:**  `~/.local/share/com.gitbutler.app/`
-* **macOS:**  `~/Library/Application Support/com.gitbutler.app/`
+* **Linux:** `~/.local/share/com.gitbutler.app/`
+* **macOS:** `~/Library/Application Support/com.gitbutler.app/`
+* **Windows:** `C:\Users\[username]\AppData\Roaming\com.domain.appname`
 
 In this folder there are a bunch of interesting things.
 
@@ -115,4 +117,3 @@ If you take that id field and go into the projects directory, you will find a su
 ```
 
 This is a Git directory where we store the state of your project as sessions.
-
