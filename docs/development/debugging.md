@@ -10,7 +10,7 @@ Often the most helpful thing is to look at the logs. GitButler is a Tauri app, s
 
 * **Linux:** `~/.config/com.gitbutler.app/logs/`
 * **macOS:** `~/Library/Logs/com.gitbutler.app/`
-* **Windows:** `C:\Users\[username]\AppData\Roaming\com.domain.appname\logs`
+* **Windows:** `C:\Users\[username]\AppData\Roaming\com.gitbutler.app\logs`
 
 In this directory, there should be rolling daily logs:
 
