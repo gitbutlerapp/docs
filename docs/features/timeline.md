@@ -15,8 +15,9 @@ layout:
 
 # ⌛ Timeline
 
-> [!IMPORTANT]
-> The timeline feature has been temporarily hidden from the UI while we focus our alpha work on the Virtual Branch functionality. It will come back very soon. :pray:
+{% hint style="warning" %}
+The timeline feature has been temporarily hidden from the UI while we focus our alpha work on the Virtual Branch functionality. It will come back very soon. :pray:
+{% endhint %}
 
 Another feature of GitButler is the project timeline. This tool allows you to find any version of any file that has ever existed in your project from the moment you downloaded GitButler.
 
@@ -24,8 +25,9 @@ Another feature of GitButler is the project timeline. This tool allows you to fi
 
 When you add a project to GitButler, we will always be in the background, watching the directory like a hawk. Any files that you change that are not in your `.gitignore` file will be automatically saved every time you change them.
 
-> [!NOTE]
-> The actual implementation of this is that we store CRDT data for all observed file changes inside your `.git` directory under `gb-[long-id-number]`. When we see you've stopped making changes for a few minutes, we flush all of that information to a meta-commit and update a hidden Git reference which you can find by running `git show-ref | grep gitbutler`. If you sign up for GitButler Cloud, we push that data to our servers so your working directory history is backed up.
+{% hint style="info" %}
+The actual implementation of this is that we store CRDT data for all observed file changes inside your `.git` directory under `gb-[long-id-number]`. When we see you've stopped making changes for a few minutes, we flush all of that information to a meta-commit and update a hidden Git reference which you can find by running `git show-ref | grep gitbutler`. If you sign up for GitButler Cloud, we push that data to our servers so your working directory history is backed up.
+{% endhint %}
 
 These changes allow us to reconstruct what your working directory looked like at any point in time. You can see visualizations of this data on your project homepage and you can drill into any day or file to play back the changes. You can use this to remind yourself what you did, find previous versions of files that were never committed, revert sections or code you want to go back to, etc.
 

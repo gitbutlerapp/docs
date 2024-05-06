@@ -25,13 +25,15 @@ Virtual branches are just like normal Git branches, except that you can work on 
   </figure>
 </div>
 
-> [!WARNING]
-> You cannot use both GitButler virtual branches and normal Git branching commands at the same time, you will have to "commit" to one approach or the other.
+{% hint style="warning" %}
+You cannot use both GitButler virtual branches and normal Git branching commands at the same time, you will have to "commit" to one approach or the other.
+{% endhint %}
 
 The reason is that stock Git can only handle one branch at a time, it does not have tooling to use or understand multiple, so most commands having to do with the index or HEAD or branching (`commit`, `branch`, `checkout`, etc) may behave unexpectedly. Most importantly, do not use normal Git commit tooling or other GUIs.&#x20;
 
-> [!TIP]
-> To understand why and how to get out of this, please read our [integration-branch.md](integration-branch.md) docs.
+{% hint style="info" %}
+To understand why and how to get out of this, please read our [integration-branch.md](integration-branch.md) docs.
+{% endhint %}
 
 ## Base Branch
 
@@ -83,9 +85,10 @@ Eventually you will have work merged into the branch you chose as your base bran
 
 Upstream work will automatically be shown in your sidebar in the "Trunk" section. When you click "Merge into common base" (or the "Update" button next to your "Applied Branches" section), we will attempt to integrate that work with your existing virtual branches. Each branch, applied or unapplied, will try to be updated with the new work.
 
-> [!NOTE]
-> We will attempt to rebase any commits in your virtual branches on top of new work (similar to running a `git pull --rebase` on each branch).
-> However, if you already have commits in your branch, we have to create a merge commit to get them up to date.
+{% hint style="info" %}
+We will attempt to rebase any commits in your virtual branches on top of new work (similar to running a `git pull --rebase` on each branch).
+However, if you already have commits in your branch, we have to create a merge commit to get them up to date.
+{% endhint %}
 
 If we cannot update a branch because of merge conflicts, we will unapply the branch automatically and leave it in an unmerged state. You can identify these branches with the blue dot next to them in your branch listing.
 
