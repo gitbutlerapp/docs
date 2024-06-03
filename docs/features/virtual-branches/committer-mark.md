@@ -12,7 +12,7 @@ Git actually natively supports having two individuals credited with any commit. 
 
 The other credit can optionally go to a "committer", which was historically the person who pulled the work into the project. Normally this is an open source maintainer or something, it's normally written when a branch is rebased or a commit is cherry picked.
 
-By default, GitButler will credit itself as the "committer" on any virtual branch commits that you make. This helps us spread the word in a fairly non-intrusive way. You don't see the committer when you run `git log` normally, you only really see it on GitHub as a little icon behind the author's icon, like this:
+If you choose to turn it on as a show of support, GitButler will credit itself as the "committer" on any virtual branch commits that you make. This helps us spread the word in a fairly non-intrusive way. You don't see the committer when you run `git log` normally, you only really see it on GitHub as a little icon behind the author's icon, like this:
 
 <div align="center">
 
@@ -20,4 +20,4 @@ By default, GitButler will credit itself as the "committer" on any virtual branc
 
 </div>
 
-You can turn this off in the **project settings** if you want, but we would really appreciate it if you could leave it on. It's a small way to help us spread the word about GitButler.
+This is by default turned off, but you can turn this off in the **project settings** if you really love us. It's a small way to help us spread the word about GitButler.

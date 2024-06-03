@@ -15,8 +15,8 @@
   * [🎋 Remote Branches](features/virtual-branches/remote-branches.md)
   * [🍇 Integration Branch](features/virtual-branches/integration-branch.md)
   * [🍡 Merging](features/virtual-branches/merging.md)
-  * [💄 Committer Mark](features/virtual-branches/committer-mark.md)
   * [✅ Signing Commits](features/virtual-branches/verifying-commits.md)
+  * [💄 Committer Mark](features/virtual-branches/committer-mark.md)
 * [⌛ Timeline](features/timeline.md)
 
 ## Troubleshooting
