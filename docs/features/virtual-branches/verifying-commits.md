@@ -42,10 +42,10 @@ We look to see if we have a signing key in `user.signingkey`. If we have a key, 
 
 The only major thing we don't support yet is `gpg.ssh.defaultKeyCommand` for other ways to get a key other than the `user.signingkey` field. We also don't support the X.509 smime stuff.
 
-Here is an
+Here is an example, if you have a public key here `.ssh/id_ed25519.pub` then you can setup signing with something like this:
 
 ```
-$ git config --global user.signingkey "~/.ssh/ed25519.pub"
+$ git config --global user.signingkey "/Users/schacon/.ssh/id_ed25519.pub"
 $ git config --global gpg.format ssh
 $ git config --global gitbutler.signCommits true
 ```
