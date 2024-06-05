@@ -17,7 +17,7 @@
   * [🍡 Merging](features/virtual-branches/merging.md)
   * [✅ Signing Commits](features/virtual-branches/verifying-commits.md)
   * [💄 Committer Mark](features/virtual-branches/committer-mark.md)
-* [⌛ Timeline](features/timeline.md)
+* [⌛ Project History](features/timeline.md)
 
 ## Troubleshooting
 
