@@ -50,11 +50,29 @@ $ git config --global gpg.format ssh
 $ git config --global gitbutler.signCommits true
 ```
 
+You can also set this up in your project settings, perhaps a little more easily:
+
+<figure><img src="../../.gitbook/assets/CleanShot 2024-06-05 at 13.16.56@2x.png" alt=""><figcaption></figcaption></figure>
+
+The nice thing here is that you can also test the settings easily by hitting the "Test Signing" button.
+
 There are lots of other ways to set up GPG or SSH commit signing:
 
 * 1Password is a very easy way to [SSH sign commits](https://blog.1password.com/git-commit-signing/).
 * GitHub has a [good guide](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key) on how to setup GPG or SSH keysigning.
 * Here is a nice simple gist for [GPG signing on Windows](https://gist.github.com/BoGnY/f9b1be6393234537c3e247f33e74094a).
+
+{% hint style="info" %}
+### Using GitButler's Generated SSH Key
+
+Earlier versions of GitButler would only sign with it's generated SSH key. Although we've removed that functionality, you can easily set it back up by pointing the `signingKey` at the generated SSH Key. The key is located in the following locations:
+
+```
+Linux: [userdir]/.local/share/com.gitbutler.app/keys/ed25519.pub
+macOS: /Users/[username]/Library/Application Support/com.gitbutler.app/keys/ed25519.pub
+Windows: C:\Users\[username]\AppData\Roaming\com.domain.appname\keys\ed25519.pub
+```
+{% endhint %}
 
 ## Upload Your Signing Key
 
