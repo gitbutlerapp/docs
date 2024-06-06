@@ -56,15 +56,13 @@ In this folder there are a bunch of interesting things.
 ```
 ❯ cd ~/Library/Application\ Support/com.gitbutler.app
 
-❯ tree -L 1
+❯ tree .
 .
-├── database.sqlite3
-├── indexes
 ├── keys
-├── projects
+│   ├── ed25519
+│   └── ed25519.pub
 ├── projects.json
-├── settings.json
-└── user.json
+└── settings.json
 
 4 directories, 4 files
 ```
@@ -96,24 +94,11 @@ The `projects.json` file will have a list of your projects metadata:
 ]
 ```
 
-If you take that id field and go into the projects directory, you will find a subdirectory that is the same as that id.
+The `settings.json` are some top level preferences you've set. A lot of stu
 
 ```
-❯ cd projects/71218b1b-ee2e-4e0f-8393-54f467cd665b
-
-❯ tree -L 1
-.
-├── HEAD
-├── config
-├── description
-├── gitbutler
-├── gitbutler.lock
-├── hooks
-├── info
-├── objects
-└── refs
-
-6 directories, 4 files
+❯ cat settings.json
+{"appAnalyticsConfirmed":true,"appNonAnonMetricsEnabled":true}%
 ```
 
-This is a Git directory where we store the state of your project as sessions.
+Finally, the `keys` directory holds the SSH key that we generate for you in case you don't want to go through creating your own. It's only used if you want to use it to sign commits or use it for authentication.
