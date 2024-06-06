@@ -27,10 +27,9 @@ If you've committed everything on a virtual branch, the reference will just poin
 So for example, if I have the following two virtual branches, one fully committed and one with work pending:
 
 <div align="center">
-  <figure>
-    <img src="../.gitbook/assets/CleanShot 2024-02-23 at 10.30.27@2x.png" alt="">
-    <figcaption></figcaption>
-  </figure>
+
+<figure><img src="../.gitbook/assets/CleanShot 2024-02-23 at 10.30.27@2x.png" alt=""><figcaption></figcaption></figure>
+
 </div>
 
 I can view the git branches like this:
@@ -97,7 +96,7 @@ Date:   Fri Feb 23 10:30:18 2024 +0100
 
 You can see the two `gitbutler` refs under the "Here are the branches that are currently applied" section.
 
-Again, these are real git refs, just not under `refs/heads` so that we don't pollute your `git branch` output. But if GitButler crashes at some point, you can still push them to GitHub or whatever you want. Here is an example pushing my virtual branch to a GitHub branch called `convert-tables`:&#x20;
+Again, these are real git refs, just not under `refs/heads` so that we don't pollute your `git branch` output. But if GitButler crashes at some point, you can still push them to GitHub or whatever you want. Here is an example pushing my virtual branch to a GitHub branch called `convert-tables`:
 
 ```
 ❯ git push origin refs/gitbutler/Convert-tables-to-utf8mb4:refs/heads/convert-tables
@@ -117,299 +116,160 @@ To github.com:gitbutlerapp/web.git
 
 ```
 
-## GitButler Sessions
+## GitButler Operations Log
 
 Ok, let's say that your work was not in one of those refs for some reason. Maybe you hit some weird bug and it completely changed everything in a way where now you're sitting on the couch in the dark with a glass of whisky, slowly mumbling the word "GitButler..." and plotting your revenge.
 
-Well, before you put your plan into action, let's try something first.
+Most of the time, we'll have whatever you're looking for in our operations log.
 
-{% hint style="warning" %}
-Warning. The following gets into low level git objects.  You may want to brush up on [Git Internals](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects) if you get confused at parts.
-{% endhint %}
+The easiest way to access this is to use the built in Project History UI: [timeline.md](../features/timeline.md "mention")
 
-You see, GitButler actually sits in the background with a filesystem watcher and every time it sees a file change in a file that is not ignored by `.gitignore`, it will store a CRDT of the changes to every file it sees changed, all the time. It will store these changes and snapshots of the whole working directory at least once an hour, generally even more often.
+However, let's dig into how this works, just in case you want to check it out yourself.
 
-These sessions are kept in your [Data Files directory](../development/debugging.md#data-files). If you go to your project data directory, you'll find that it's a _second_ git repository, just for this sideband sessions data. (It's also where we keep your virtual branch data). But let's look at the session data:
+Every time that GitButler does some possibly data-changing operation, we store a snapshot of your project state in our operations log before the operation happens so you can undo it if you want to. This is stored as a Git commit history that is parallel to your projects (ie, no common parents).
 
-```
-❯ cd ~/Library/Application\ Support/com.gitbutler.app.nightly/projects/1196ca33-119d-44ed-85be-83feb8b4bf20 
-
-❯ cat HEAD 
-ref: refs/heads/current
-
-❯ git log
-commit 6af3f528721f72f2e5f2a583555e736cf8a1e4bd (HEAD -> current, 1196ca33-119d-44ed-85be-83feb8b4bf20)
-Author: Scott <schacon@gmail.com>
-Date:   Fri Feb 9 15:36:31 2024 +0100
-
-    gitbutler check
-
-commit 07938f1a02ca6d7ac93919abc86de795ca72cf63
-Author: Scott <schacon@gmail.com>
-Date:   Fri Feb 9 15:24:28 2024 +0100
-
-    gitbutler check
-
-commit c500a0b7e38a3edc3de8570cdbbc01b54e263a48
-Author: Scott <schacon@gmail.com>
-Date:   Fri Feb 9 13:17:58 2024 +0100
-
-    gitbutler check
-
-commit 060e363d98636d4b320e25cf4317d1b415937388
-Author: Scott <schacon@gmail.com>
-Date:   Fri Feb 9 13:08:48 2024 +0100
-
-    gitbutler check
-```
-
-Ok, so it's making "gitbutler check"s every once in a while (it will only do it while you're actively working on the project and it will record a snapshot if it doesn't see any changed files for 5 minutes). What is in this session snapshot? Let's take a raw look at the tree:
+You can inspect this by looking at the `.git/gitbutler/operations-log.toml`file.
 
 ```
-❯ git ls-tree HEAD
-040000 tree d107382389c3612190d079b41a57dd1a340b6816	branches
-040000 tree 235347291bbc88bdbd870f806e8c151b1f3d61d0	session
-040000 tree cea59ceae4805aad34c324390e003a02cad3721b	wd
+❯ tree .git/gitbutler
+.git/gitbutler
+├── operations-log.toml
+└── virtual_branches.toml
+
+1 directory, 2 files
+
+❯ cat .git/gitbutler/operations-log.toml
+head_sha = "16e47cb1d091ca9dd44327fef2f5305b09403a95"
+
+[modified_at]
+secs_since_epoch = 1717663406
+nanos_since_epoch = 560458000
 ```
 
-Ok, so there are three top level directories. Under `branches`, it stores the state of each virtual branch (applied or not). Under `session` it stores the data for things that have happened in this one session (from a few minutes up to an hour long). Under `wd` it has a snapshot of the working directory at the end of the session.
-
-So, let's do a `--stat` so we can see what changed between one session and another:
+If we look at this commit, we can see the history of all of the project history snapshots that GitButler is keeping:
 
 ```
-❯ git log --stat
-commit 07938f1a02ca6d7ac93919abc86de795ca72cf63
-Author: Scott <schacon@gmail.com>
-Date:   Fri Feb 9 15:24:28 2024 +0100
+❯ git log 16e47cb1d091ca9dd44327fef2f5305b09403a9 -2
+commit 16e47cb1d091ca9dd44327fef2f5305b09403a95
+Author: GitButler <gitbutler@gitbutler.com>
+Date:   Thu Jun 6 10:43:26 2024 +0200
 
-    gitbutler check
+    CreateBranch
 
- branches/d49480f4-5013-4ae8-8046-db7abdfa27cc/meta/selected_for_changes                  |  1 -
- branches/d49480f4-5013-4ae8-8046-db7abdfa27cc/meta/updated_timestamp_ms                  |  2 +-
- session/deltas/butler/Gemfile                                                            |  1 +
- session/deltas/butler/README.md                                                          |  1 +
- session/deltas/butler/config/database.yml                                                |  1 +
- session/deltas/butler/config/initializers/cors.rb                                        |  1 +
- session/meta/commit                                                                      |  2 +-
- session/meta/id                                                                          |  2 +-
- session/meta/last                                                                        |  2 +-
- session/meta/start                                                                       |  2 +-
- wd/butler/Gemfile                                                                        |  2 +-
- wd/butler/README.md                                                                      |  2 +-
- wd/butler/config/database.yml                                                            |  4 ++--
- wd/butler/config/initializers/cors.rb                                                    | 16 ++++++++++++++++
- 36 files changed, 57 insertions(+), 13 deletions(-)
+    Version: 1
+    Operation: CreateBranch
+    name: Virtual branch
+
+commit 2c95aa06d76b3230f1a51d9f89a211770d93ae51
+Author: GitButler <gitbutler@gitbutler.com>
+Date:   Thu Jun 6 10:28:30 2024 +0200
+
+    UpdateWorkspaceBase
+
+    Version: 1
+    Operation: UpdateWorkspaceBase
+    
 ```
 
-While `branches` has interesting data (all our virtual branch coolness), we probably don't need to look at that for data recovery purposes.
+You can see that before creating a branch or updating our workspace with upstream work, we're recording the state of our project so we have an undo point. So what data are we keeping here in addition to this trailer information?
 
-## Recovering a Working Directory State
-
-The nice thing about this is that we then have an automatic backup of our working directory at very regular intervals whenever we're touching any files in our project directory. You can use Git plumbing commands to do whatever you want with the `wd` subtree in any of those "check" commits.
-
-For example, let's find a session from a month ago and extract the contents of our README as it looked a month ago.
+Let's look at the tree of one of these commits:
 
 ```
-❯ git log --before=1.month.ago -1
-commit f5278569efebf6e183ef9d513642f334a27ca1db
-Author: Scott <schacon@gmail.com>
-Date:   Tue Jan 23 15:11:18 2024 +0500
-
-    gitbutler check
-
-❯ git ls-tree f52785:wd
-040000 tree 63ee26541d5e5630745d1eef33ca7e1ff0dbd747	.gitbutler
-040000 tree 875a876f7bcdf666d251e05206005fdfff47ddab	.github
-100644 blob e43b0f988953ae3a84b00331d0ccf5f7d51cb3cf	.gitignore
-100644 blob 71b88a34ced72a3b73063eba2b7e654e593a64a6	.pscale.yml
-100644 blob 8c50098d8aed57b02fd10f40a670a7c673b7c5a5	.ruby_version
-100644 blob 6c3073ecf95fed46916d46027569ee0315444ccf	Gemfile
-100644 blob c9e585dfea27b95db2b0e94f6a5106270ed0e26e	Gemfile.lock
-100644 blob 887d8af38bcafdfb63c2a6d4b3dea5af4621446e	README.md
-040000 tree dcd03c50327360c1dd77a50321bff02b9c63322b	auth-proxy
-040000 tree 5f7611e9f0fa3299c8fffddd2c77c28f1f675df8	butler
-040000 tree 6419d6ff7f8e7686a61b2d0adae9ece1034fdd26	chain
-100644 blob ae12c3c02b2a9858d3e150d773441273887b2131	check.rb
-040000 tree 6d0b34e4d8385a8d3e532984b06f75deddb23849	copilot
-040000 tree 764c8198d7a766f11cc20fa22cefd4a6c90b34f6	git
-
-❯ git cat-file -p f52785:wd/README.md | head -5
-# GitButler Web Services
-
-This is the repository for the GitButler Web Services. It is a collection of 
-services that are used by the GitButler application. Each service lives in its 
-own folder and has its own Docker file used to deploy to AWS via Copilot.
+❯ git cat-file -p 16e47cb1d091ca9dd44327fef2f5305b09403a95^{tree}
+040000 tree 4b825dc642cb6eb9a060e54bf8d69288fbee4904    conflicts
+040000 tree b283f22f5abf4ed9c612c1b5b3b9a98ec25474b0    index
+040000 tree b283f22f5abf4ed9c612c1b5b3b9a98ec25474b0    target_tree
+100644 blob d839dca7e14f5833ad737b4adbf337bd20489927    virtual_branches.toml
+040000 tree a0821552c0e7d5defe369d577af5e3a87b442469    virtual_branches
+040000 tree b283f22f5abf4ed9c612c1b5b3b9a98ec25474b0    workdir
 ```
 
-Or let's say you want to create a git branch that looks like that and check it out. First we can get the tree sha of the working directory by finding the commit SHA and then running `ls-tree` to see what the `wd` tree is:
+So, it's not a snapshot of your working directory alone, but it includes a bunch of other meta information.
+
+The state of your working directory is indeed stored in the `workdir` tree:
 
 ```
-❯ git log --before=1.month.ago -1
-commit f5278569efebf6e183ef9d513642f334a27ca1db
-Author: Scott <schacon@gmail.com>
-Date:   Tue Jan 23 15:11:18 2024 +0500
-
-    gitbutler check
-
-❯ git ls-tree f5278569efeb
-040000 tree 1263cc14f784e7c620fc85811602c661c150948b	branches
-040000 tree 7b09a9d7fa582f369d61bace512b991a427af523	session
-040000 tree f32491037b81c91d5a7d8d8436af6d2a74b49bd0	wd
+❯ git cat-file -p 16e47cb1d091ca9dd44327fef2f5305b09403a95^{tree}:workdir
+040000 tree 6676978c86f95a96a59d712c2a4432a7df39f4c9    .cargo
+100644 blob 2cb803c6460cd42bce8611d101e1e546b3f57ada    .editorconfig
+100644 blob 50ca329f24bb341a39f5c9cbc3fd4a083c162f9e    .gitattributes
+040000 tree 717cae25b7e27bc7ddbb3e5e99b0c2889ffb6f9b    .github
+100644 blob 3863377de3e79a055dbe5778cfa3c64f34db1501    .gitignore
+100644 blob 0f391aedf3b8621560f1f4c950b68710e0cff825    CODE_OF_CONDUCT.md
+100644 blob be2128195a883e39bb59931d30a8ce63c4fd9b0f    CONTRIBUTING.md
+100644 blob 73cea1430a8f83a1580684fc97975dabc7b4293e    Cargo.lock
+100644 blob eccda7ef5fc62b6e862eee89c3dfb22216735620    Cargo.toml
+100644 blob 5fc97481cac5ccbf9f6b6f7b646820553f6d865c    DEVELOPMENT.md
+100644 blob 11d87d8a56a7482062c1fa377a1f7f006c3e721b    LICENSE.md
+100644 blob 66db4fe325336f213ac34008de7cff129a654f53    README.md
+100644 blob 994f624c90283bb1df2b9b8a3924e9b8aa8a13e1    SECURITY.md
+040000 tree f88da8e9695e023c330a3fd2def9da0d4561fe22    app
+040000 tree 8238a9217ea4884c20c599eb5007d1928ce9b13e    crates
+100644 blob 147e034ca02262f01bc07a1bf8cc8c70d64edd10    flake.lock
+100644 blob d3add173b05930b82363b043eac2370b661d1c7f    flake.nix
+100644 blob 672fcfcf3486ae15e5ee3470f4981130d6c700d8    package.json
+100644 blob c3cf5173d6baa349a67032ef0083b71d0d95606e    pnpm-lock.yaml
+100644 blob 5dddf2919f467ba1bdf22376235f1c8a55173c06    pnpm-workspace.yaml
+100644 blob 0de364ea8e94ce1fdf711be2993e9cff47e0e746    rust-toolchain.toml
+100644 blob 830b80e861ab3b8d8948268a1a58a5209fda1cfa    rustfmt-nightly.toml
+040000 tree 61bceaa29b69e258fb61b723d8b32cbf9f011201    scripts
 ```
 
-So now we know that the `wd` tree is `f32491037b81c91d5a7d8d8436af6d2a74b49bd0`. Now we can do lots of things.&#x20;
-
-We could read it into our index with `read-tree`, then check it out into our working directory with `reset`. We could create a new branch with `commit-tree` and then check that out or push it somewhere, etc. Let's take a look at the latter.
-
-First of all, this needs to be run in your _project directory_, not the GitButler data directory we've been working in. Most of the actual git object data is written there and referenced via alternates.
+So you can easily recover file contents from any of these snapshots if needed:
 
 ```
-❯ cd ~/my-project
+❯ git cat-file -p 16e47cb1^{tree}:workdir/.github/dependabot.yml
+version: 2
 
-❯ git commit-tree f32491037b81c91d5a7d8d8436af6d2a74b49bd0 -p origin/master -m 'recovering a month ago'
-3c31b43463c6b9f7d79f7124e09d179c8351d7b6
-
-❯ git branch recovery-branch 3c31b43463c6b9f7d79f7124e09d179c8351d7b6
-
-❯ git log recovery-branch
-commit 3c31b43463c6b9f7d79f7124e09d179c8351d7b6 (recovery-branch)
-Author: Scott Chacon <schacon@gmail.com>
-Date:   Fri Feb 23 11:22:10 2024 +0100
-
-    recovering a month ago
-
-commit a473ce09a740dbfe529f7b6f8e26b26ee4f53651 (origin/master, origin/HEAD)
-Merge: 10aa6a44 9678a685
-Author: Scott Chacon <schacon@gmail.com>
-Date:   Fri Feb 9 13:06:29 2024 +0100
-
-    Add cors configuration (#241)
-
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
 ```
 
-Now the working directory snapshot from a month ago looks like a new commit on top of `origin/master`. It's a real branch, we can check it out, push it, etc.
+Beyond that, we also store the state of your index in `index` as a tree, the state of what your target (trunk) tree looked like in `target_tree`, conflicts if you were in a conflicted state in `conflicts` and the state of your virtual branches.
 
-## CRDTs
-
-Now, if you need a version of a file _between_ two session snapshots, you can also technically recover that, because we _also_ keep a CRDT of each file we see changed. These are found in the `session/deltas` tree in each session.&#x20;
-
-Now, this gets a little more complicated, because we don't have a UI for reconstructing this data easily anymore. We will add it back at some point, but for now, since we _are_ still recording this data, let's see how we could use this raw data to reconstruct the state of a file at any moment.
-
-Here is what the crdt file format looks like:
+The virtual branches toml file has the metadata:
 
 ```
-❯ git cat-file -p HEAD:session/deltas/butler/test/api/summarize_test.rb | jq | head -20
-[
-  {
-    "operations": [
-      {
-        "insert": [
-          194,
-          "  # enable caching\n    Rails.cache.clear\n  "
-        ]
-      }
-    ],
-    "timestampMs": 1706785016658
-  },
-  {
-    "operations": [
-      {
-        "delete": [
-          372,
-          9
-        ]
-      },
-...
+❯ git cat-file -p 16e47cb1d091ca9dd44^{tree}:virtual_branches.toml
+[default_target]
+branchName = "master"
+remoteName = "origin"
+remoteUrl = "git@github.com:gitbutlerapp/gitbutler.git"
+sha = "e00e54af7f903ef84600079a45490a7f07e4702e"
+pushRemoteName = "origin"
+
+[branch_targets]
+
+[branches.09ef54c4-1081-4a52-8182-a5ec725016b6]
+id = "09ef54c4-1081-4a52-8182-a5ec725016b6"
+name = "commit signing settings"
+notes = ""
+applied = false
+upstream = "refs/remotes/origin/commit-signing-settings"
+upstream_head = "b60a66452dfecef74103346af6a3291ad677d246"
+created_timestamp_ms = "1717489406268"
+updated_timestamp_ms = "1717489406268"
+tree = "b28e7eefdd7b6f36456516b696146a2ea7638ca4"
+head = "b60a66452dfecef74103346af6a3291ad677d246"
+ownership = ""
+order = 4
+selected_for_changes = 1717489406268
 ```
 
-Here we see that this Ruby test file had a series of edits and GitButler kept each small file change as an array of deletions and insertions from byte offsets on a known state of the file.
-
-So, let's recover every step of editing this file. Here is a simple Ruby script for recovering every single file save over the course of this single session:
-
-```ruby
-require 'json'
-
-file_contents = File.read('/tmp/base')
-crdt = JSON.parse(File.read('/tmp/crdt'))
-
-recover_dir = "/tmp/recovered"
-Dir.mkdir(recover_dir) unless File.directory?(recover_dir)
-
-crdt.each do |change|
-  ts = change['timestampMs']
-
-  pre_file_contents = file_contents
-  ops = change['operations']
-
-  ops.each do |op|
-    if insert = op['insert']
-      offset, string = insert
-      file_pre = file_contents[0, offset]
-      file_post = file_contents[offset, file_contents.length - offset]
-      file_contents = file_pre + string + file_post
-    end
-    if delete = op['delete']
-      offset, len = delete
-      file_pre = file_contents[0, offset]
-      file_post = file_contents[offset, file_contents.length - offset]
-      file_post = file_post[len, file_post.length - len]
-      file_contents = file_pre + file_post
-    end
-  end
-
-  puts file_path = "#{recover_dir}/#{ts}"
-  File.write(file_path, file_contents)
-end
-```
-
-This reads the base file from `/tmp/base`, the CRDT json data from `/tmp/crdt` and then writes out every file save that was recorded as a seperate file under `/tmp/recovered/[ts]`
-
-Let's try it out:
+The `virtual_branches` tree has the actual contents of those computed branches in case we need to recreate them:
 
 ```
-# extract the crdt data from session/deltas/[path]
-❯ git cat-file -p HEAD:session/deltas/butler/test/api/summarize_test.rb > /tmp/crdt
-
-# extract the base content from the session's parent's wd (notice the ~)
-❯ git cat-file -p HEAD~:wd/butler/test/api/summarize_test.rb > /tmp/base
-
-# run our recovery script
-❯ ruby recover.rb 
-/tmp/recovered/1706785016658
-/tmp/recovered/1706785046167
-/tmp/recovered/1706785185102
-/tmp/recovered/1706785317555
-/tmp/recovered/1706785325283
-/tmp/recovered/1706785337638
-/tmp/recovered/1706785368227
-/tmp/recovered/1706785372113
-/tmp/recovered/1706785373236
+── virtual_branches
+   └── [branch-id]
+       ├── commit-message.txt
+       └── tree (subtree)
+   └── [branch-id]
+       ├── commit-message.txt
+       └── tree (subtree)
 ```
 
-Now we have a series of versions of this file that is every time we saw the file change on disk, saved by the timestamp we observed it. We can see that each is a little different from the base and each other:
-
-```
-❯ diff /tmp/base /tmp/recovered/1706785016658
-8a9,10
->     # enable caching
->     Rails.cache.clear
-
-❯ diff /tmp/base /tmp/recovered/1706785046167
-8a9,10
->     # enable caching
->     Rails.cache.clear
-15,17c17,23
-<     post_auth_user(@user, '/api/summarize_branch_name/branch')
-<     assert last_response.ok?
-<     ap res = JSON.parse(last_response.body)
----
-> 
->     # stub Summarizer.branch_name_from_diff
->     Summarizer.stub(:branch_name_from_diff, 'branch_name') do
->       post_auth_user(@user, '/api/summarize_branch_name/branch')
->       assert last_response.ok?
->       ap res = JSON.parse(last_response.body)
->     end
-```
-
-Again, eventually we'll add a nice UI into GitButler to do this type of recovery, but for now if you're in a bind, this should give you the tools to be able to recover almost any version of any file from the moment you import your project into GitButler.
+This allows you to get contents of any file in any of your virtual branch states as well.
