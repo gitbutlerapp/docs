@@ -4,11 +4,13 @@ If you are having trouble pushing or fetching from a remote, this is likely rela
 
 ## Available authentication methods
 
-GitButler can be configured to use several different git authentication methods. You can switch between them in your project settings. You can try multiple diffirent options and see if any of them are appropriate for your setup.
+GitButler can be configured to use several different git authentication methods. You can switch between them in your project settings. You can try multiple different options and see if any of them are appropriate for your setup.
 
-### Auto detect
+<figure><img src="../.gitbook/assets/CleanShot 2024-06-06 at 11.44.05@2x.png" alt=""><figcaption></figcaption></figure>
 
-This is the default setting. GitButler will attempt multiple authentication methods (which may make this option slower in some cases). If you have a GitHub integration set up, the app will also attempt to use that.
+### Use a Git executable (default)
+
+The default way to push and fetch is for GitButler to use an existing system Git executable. This should use whatever authentication mechanism that Git uses for the remote that you're trying to push to or fetch from.
 
 ### Use an existing SSH key
 
@@ -22,15 +24,13 @@ This option generates a new SSH key which will be stored locally in the applicat
 
 If your system is set up with a credential helper, GitButler can use that. For more info on git credential helpers, see this [article](https://git-scm.com/doc/credential-helpers)
 
-## Not yet implemented authentication methods
-
 ### FIDO security keys (YubiKey, etc.)
 
-Tracked in GitHub issue [#2661](https://github.com/gitbutlerapp/gitbutler/issues/2661)
+If you're using a FIDO key, check out this issue to see how people have set it up with the Git executable method: [#2661](https://github.com/gitbutlerapp/gitbutler/issues/2661)
 
 ### Keys managed by 1Password
 
-Tracked in GitHub issue [#2779](https://github.com/gitbutlerapp/gitbutler/issues/2779)
+Keys stored in 1Password should properly use it as an SSH agent for authentication and signing commits if you use the Git executable option. (Previously tracked in [#2779](https://github.com/gitbutlerapp/gitbutler/issues/2779))
 
 ### Host certificate checks
 
@@ -46,9 +46,9 @@ As a workaround you may set your remote in the [SSH format](https://git-scm.com/
 
 #### Updating virtual branches when the respective remote has new commits
 
-If you have added a remote branch to your active workspace in GitButler, or pushed a virtual branch to the remote, and new commits are added to the remote branch, there is currently no way to sync those new commits into the existing virtual branch in GitButler. This is being tracked in the GitHub issue [#2649](https://github.com/gitbutlerapp/gitbutler/issues/2649). 
+If you have added a remote branch to your active workspace in GitButler, or pushed a virtual branch to the remote, and new commits are added to the remote branch, there is currently no way to sync those new commits into the existing virtual branch in GitButler. This is being tracked in the GitHub issue [#2649](https://github.com/gitbutlerapp/gitbutler/issues/2649).
 
-The current workaround is to undo any local commits and then stash your local changes manually using [git stash](https://git-scm.com/docs/git-stash) and then delete the virtual branch that has upstream changes. Then you can update the trunk by clicking the update button next to the word "Trunk" in the sidebar on the left to make sure all new upstream changes are synced, then select the remote branch that has the new changes and click the "Apply +" button above the list of commits for the branch. Once the updated branch is applied to your working directory, you can manually `git stash pop` your stashed changes and then resolve any merge conflicts. 
+The current workaround is to undo any local commits and then stash your local changes manually using [git stash](https://git-scm.com/docs/git-stash) and then delete the virtual branch that has upstream changes. Then you can update the trunk by clicking the update button next to the word "Trunk" in the sidebar on the left to make sure all new upstream changes are synced, then select the remote branch that has the new changes and click the "Apply +" button above the list of commits for the branch. Once the updated branch is applied to your working directory, you can manually `git stash pop` your stashed changes and then resolve any merge conflicts.
 
 ### Help on Discord
 

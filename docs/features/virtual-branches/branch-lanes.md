@@ -59,33 +59,3 @@ Once you have committed work, you will see it at the bottom as a list of commits
 If you have authenticated to GitHub, you also have the option to create a Pull Request for that branch automatically.
 
 Any further commits will be marked as local until you push them.
-
-### Undoing Commits
-
-You can always undo your last commit by hitting the "Undo" button on the commit.
-
-<div align="center">
-
-<figure><img src="../../../.gitbook/assets/CleanShot 2023-11-30 at 17.17.17@2x.png" alt="" width="375"><figcaption><p><em>Hit undo to undo.</em></p></figcaption></figure>
-
-</div>
-
-### Amending Commits
-
-If you made a commit and then make another small change and want it to be in your last commit, you can simply drag the file on top of the last commit to amend it.
-
-<div align="center">
-
-<figure><img src="../../../.gitbook/assets/CleanShot 2023-11-30 at 17.20.14@2x.png" alt="" width="563"><figcaption><p><em>Drag a file onto the last commit to amend the commit to include that file change.</em></p></figcaption></figure>
-
-</div>
-
-### Squashing Commits
-
-If you want to squash two commits together, just start dragging one of the commits and the squash targets will light up.
-
-<div align="center">
-
-<figure><img src="../../../.gitbook/assets/CleanShot 2023-11-30 at 17.18.25@2x.png" alt="" width="563"><figcaption><p><em>Just drag and drop to squash commits.</em></p></figcaption></figure>
-
-</div>
