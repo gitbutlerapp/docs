@@ -1,6 +1,6 @@
 # 🧡 Supporters
 
-Thinking about paying for Alpha software? Sounds odd, right?
+Thinking about paying for Beta software? Sounds odd, right?
 
 No worries, the main stuff in GitButler stays the same whether you pay or not.
 
