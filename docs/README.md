@@ -2,7 +2,7 @@
 description: An overview of the GitButler product and alpha phase.
 ---
 
-# 🤵♂ Welcome to GitButler
+# 🤵‍♂️ Welcome to GitButler
 
 ## Overview
 
@@ -18,5 +18,5 @@ Read about it over [Why GitButler](overview/why-gitbutler.md) Section.
 
 Currently GitButler does two things. It records everything in a working directory that you have so that you can rewind to any point in time for any file you have. It also does a growing set of Git operations, soon to be a full fledged Git client. You can read more about these features here:
 
-- [Virtual Branches](features/virtual-branches/README.md)
-- [Timeline](features/timeline.md)
+* [Virtual Branches](features/virtual-branches/)
+* [Project History](features/timeline.md)
