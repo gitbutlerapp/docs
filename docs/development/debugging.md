@@ -19,16 +19,15 @@ In this directory, there should be rolling daily logs:
 
 ❯ tree -L 1
 .
-├── GitButler.log
-├── GitButler.log.2023-09-02
-├── GitButler.log.2023-09-03
-├── GitButler.log.2023-09-04
-├── GitButler.log.2023-09-05
-├── GitButler.log.2023-09-06
-├── GitButler.log.2023-09-07
-├── GitButler.log.2023-09-08
-├── GitButler.log.2023-10-10
-├── GitButler.log.2024-01-30
+├── GitButler.2023-09-02.log
+├── GitButler.2023-09-03.log
+├── GitButler.2023-09-04.log
+├── GitButler.2023-09-05.log
+├── GitButler.2023-09-06.log
+├── GitButler.2023-09-07.log
+├── GitButler.2023-09-08.log
+├── GitButler.2023-10-10.log
+├── GitButler.2024-01-30.log
 └── tokio-console
 
 ❯ tail GitButler.log.2024-01-30 
